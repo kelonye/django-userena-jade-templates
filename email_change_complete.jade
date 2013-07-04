@@ -1,0 +1,12 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}Email verification{% endblock %}
+
+| {% block content %}
+legend Email change complete
+p
+  | You have received an email at {{ viewed_user.userena_signup.email_unconfirmed }}.
+p
+  | To associate this email address with your account ({{ viewed_user.username }}) click on the link provided in this email.
+
+| {% endblock %}

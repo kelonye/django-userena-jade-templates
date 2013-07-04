@@ -1,0 +1,19 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}Signup almost done! {% endblock %}
+
+| {% block content %}
+legend Signup complete
+p Thank you for signing up with us!
+
+| {% if userena_activation_required %}
+p
+  | You have been sent an e-mail with an activation link to the supplied email.
+p
+  | We will store your signup information for {{ userena_activation_days }} days on our server.
+| {% else  %}
+p
+  | You can now use the supplied credentials to signin.
+| {% endif %}
+
+| {% endblock %}

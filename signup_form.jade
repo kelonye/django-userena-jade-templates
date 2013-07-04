@@ -1,0 +1,22 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}Sign Up{% endblock %}
+
+| {% block content %}
+form.form-horizontal(
+  action=''
+  method='post'
+)
+  | {% csrf_token %}
+
+  fieldset
+
+    legend Signup
+
+    | {% include "form.html" %}
+
+    .control-group
+      .controls
+        input.btn(type='submit', value='Signup')
+
+| {% endblock %}

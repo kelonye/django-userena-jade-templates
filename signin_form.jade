@@ -1,0 +1,44 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}Sign In{% endblock %}
+
+| {% block content %}
+form.form-horizontal(
+  action=""
+  method="post"
+)
+  | {% csrf_token %}
+
+  fieldset
+
+    legend Signin
+
+    .row-fluid
+
+      .span7
+
+        | {% include "form.html" %}
+
+        .control-group
+          .controls
+            | {% if next %}
+            input(type="hidden", name="next", value="{{ next }}")
+            | {% endif %}
+            input.btn(type='submit', value='Signin')
+
+        .control-group
+          .controls
+            a(
+              href="{% url 'userena_password_reset' %}"
+              title="Forgot your password?"
+            )
+              | Forgot your password?
+
+      .span5
+
+          h4 Need an Account?
+          p Creating a Guliyo account is fast, easy and free.
+          a.btn.btn-info(href="{% url 'userena_signup' %}", title='Sign Up') Create an Account
+
+
+| {% endblock %}

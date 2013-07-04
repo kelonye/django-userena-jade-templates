@@ -1,0 +1,31 @@
+| {% extends 'base.html' %}
+
+| {% block breadcrumbs %}
+li
+  a(href="{% url 'userena_profile_list' %}")
+    | Accounts
+| {% endblock%}
+
+
+| {% block head %}
+link(
+  href="{{STATIC_URL}}config.css",
+  rel="stylesheet",
+  media="screen"
+)
+| {% endblock %}
+
+
+| {% block pane %}
+
+| {% block content %}{% endblock %}
+
+
+script(
+  type='text/javascript',
+  src='{{STATIC_URL}}config.js'
+)
+script.
+  require('js');
+
+| {% endblock %}

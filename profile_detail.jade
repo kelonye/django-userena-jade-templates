@@ -1,0 +1,22 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}View Profile{% endblock %}
+
+| {% block content %}
+legend Your Profile
+div
+  img(
+    src='{{ profile.get_mugshot_url }}'
+    alt='mugshot'
+  )
+
+div
+  | Name: {{ profile.user.get_full_name }}
+
+div
+  | Email: {{ profile.user.email }}
+
+div
+  | Phone: {{ profile.phone }}
+
+| {% endblock %}

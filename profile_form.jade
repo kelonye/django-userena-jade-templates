@@ -1,0 +1,24 @@
+| {% extends 'userena/base_userena.html' %}
+
+| {% block title %}Edit Profile{% endblock %}
+
+| {% block content %}
+
+form.form-horizontal(
+  action=''
+  enctype='multipart/form-data'
+  method='post'
+)
+  | {% csrf_token %}
+
+  fieldset
+
+    legend Edit Profile
+
+    | {% include "form.html" %}
+
+    .control-group
+      .controls
+        input.btn(type='submit', value='Save changes')
+
+| {% endblock %}
